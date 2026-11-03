@@ -119,27 +119,27 @@ flowchart TB
 
 | Part | What it does | Repo |
 |---|---|---|
-| MajVault | Obsidian vault in PARA folders. Each project has a `CLAUDE.md` that is its memory. ~3700 agent traces so far. | 🔒 private, it is my brain |
+| MajVault | Obsidian vault in PARA folders. Each project has a `CLAUDE.md` that is its memory. ~3700 agent traces so far. | 🔒 private, it is my brain<br/>open alternative: [korentmaj/obsidian-tracehold](https://github.com/korentmaj/obsidian-tracehold) (mine), [basicmachines-co/basic-memory](https://github.com/basicmachines-co/basic-memory) or [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem) |
 | Obsidian Tracehold | The vault pattern as a template: read before working, write a trace after. Works with Claude Code, Codex, Copilot. | [korentmaj/obsidian-tracehold](https://github.com/korentmaj/obsidian-tracehold) |
 | mnemosyne | Exports session transcripts. My fork adds `vault trace`, which the SessionEnd hook calls. | [korentmaj/mnemosyne](https://github.com/korentmaj/mnemosyne) (fork of AletheiaResearch) |
-| Notion Notebook | One page where I dump everything. Every 30 min Jev sorts each line into Task, Event, Note or Idea. | 🔒 private |
+| Notion Notebook | One page where I dump everything. Every 30 min Jev sorts each line into Task, Event, Note or Idea. | 🔒 private<br/>open alternative: [activepieces/activepieces](https://github.com/activepieces/activepieces) with an LLM step |
 
 ### Running agents
 
 | Part | What it does | Repo |
 |---|---|---|
-| cswap (claude-swap) | Three Claude subscriptions, rotated by 5 hour and 7 day usage. Big work burns the other accounts first. | third party |
-| autonight | Night coding engine. Task Scheduler calls `dispatch.mjs` every 30 min, it picks a task from `hq.db` and runs it. | 🔒 private |
-| Head orchestrators | Headless Opus sessions on another account that spawn their own subagents for work that needs 3+ agents or 30+ minutes. | 🔒 private (skills) |
-| file-claim hook | PreToolUse hook. Locks a file to the session editing it, denies other sessions for 10 min after the last edit. | 🔒 private |
-| Subagents | `Explore` (read only), `implementer` (well specified change), `reviewer` (adversarial review, runs the tests). | 🔒 private |
+| cswap | Three Claude subscriptions, rotated by 5 hour and 7 day usage. Big work burns the other accounts first. | [realiti4/claude-swap](https://github.com/realiti4/claude-swap) |
+| autonight | Night coding engine. Task Scheduler calls `dispatch.mjs` every 30 min, it picks a task from `hq.db` and runs it. | 🔒 private<br/>open alternative: [AnandChowdhary/continuous-claude](https://github.com/AnandChowdhary/continuous-claude) or [anthropics/claude-code-action](https://github.com/anthropics/claude-code-action) on a cron |
+| Head orchestrators | Headless Opus sessions on another account that spawn their own subagents for work that needs 3+ agents or 30+ minutes. | 🔒 private<br/>open alternative: [ruvnet/ruflo](https://github.com/ruvnet/ruflo) or [BloopAI/vibe-kanban](https://github.com/BloopAI/vibe-kanban) |
+| file-claim hook | PreToolUse hook. Locks a file to the session editing it, denies other sessions for 10 min after the last edit. | 🔒 private<br/>open alternative: [Dicklesworthstone/mcp_agent_mail_rust](https://github.com/Dicklesworthstone/mcp_agent_mail_rust) (file reservations) |
+| Subagents | `Explore` (read only), `implementer` (well specified change), `reviewer` (adversarial review, runs the tests). | 🔒 private<br/>open alternative: [wshobson/agents](https://github.com/wshobson/agents) or [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents) |
 
 ### Seeing what is going on
 
 | Part | What it does | Repo |
 |---|---|---|
 | Session viewer | Local dashboard + TUI. Which sessions are working, which wait for me, answer them inline. Stdlib Python. | [korentmaj/simple-agent-session-manager](https://github.com/korentmaj/simple-agent-session-manager) |
-| HQ dashboard | The cockpit. Accounts, running jobs, sessions, briefs, vault health, skills, projects. Also a read API for agents. | 🔒 private |
+| HQ dashboard | The cockpit. Accounts, running jobs, sessions, briefs, vault health, skills, projects. Also a read API for agents. | 🔒 private<br/>open alternative: [disler/claude-code-hooks-multi-agent-observability](https://github.com/disler/claude-code-hooks-multi-agent-observability) or [siteboon/claudecodeui](https://github.com/siteboon/claudecodeui), plus [ccusage/ccusage](https://github.com/ccusage/ccusage) for usage |
 
 ### Daily life
 
@@ -157,7 +157,7 @@ Plugins I run every day: [superpowers](https://github.com/obra/superpowers) (bra
 
 About 85 skills, synced across all three accounts. Most are collected from other people and I use them as they are. Credit goes to their authors.
 
-**Written by me** (🔒 for now, tied to my vault and paths)
+**Written by me** (🔒 for now, tied to my vault and paths. Open alternatives: [anthropics/skills](https://github.com/anthropics/skills), [mattpocock/skills](https://github.com/mattpocock/skills))
 
 | Skill | What it does |
 |---|---|
