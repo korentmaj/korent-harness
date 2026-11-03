@@ -203,6 +203,17 @@ About 85 skills, synced across all three accounts. Most are collected from other
 
 </details>
 
+## What is next
+
+Where this setup is weak today, and what I plan to do about it.
+
+1. **I do not measure if it helps.** Thousands of traces, none says whether the task succeeded. Next: 10 to 20 tasks with a known good result that autonight runs every week and the reviewer scores, so a new model, skill or `CLAUDE.md` change shows up as better or worse.
+2. **Project memory only grows.** The biggest project `CLAUDE.md` files are 400 to 500 lines, and distill adds far more than it removes. Next: a cap around 150 lines, old decisions move to a history file.
+3. **Vault search is plain `rg`.** It finds words, not meaning. Next: hybrid search (BM25 plus embeddings) with a reranker on top.
+4. **No per session telemetry.** The dashboard shows state, not cost or quality per session or skill. Next: Claude Code's OpenTelemetry export into the dashboard.
+5. **Too many skills.** Several overlap and every description costs context in every session. Next: keep what actually gets used, drop the rest.
+6. **Night runs share my main machine.** Next: autonight in a sandbox with no personal credentials and a GitHub token scoped to one repo.
+
 ## What I would take first
 
 If you want one thing from this: the vault loop. Read `CLAUDE.md` before work, write a trace after, distill traces back into `CLAUDE.md`. Start with [obsidian-tracehold](https://github.com/korentmaj/obsidian-tracehold). Everything else is nice to have.
