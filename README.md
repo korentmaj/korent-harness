@@ -4,6 +4,43 @@ My whole agentic coding setup on one page. One Windows PC, Claude Code on three 
 
 This is not a framework you install. It is my setup, glued to my machine. The public parts you can take and use. The private parts are listed so you see the whole picture. 🔒 means the repo is private.
 
+## Instructions for your Claude
+
+Copy this into Claude Code (or Codex) and it sets up the core of this harness on your machine. It asks before it installs anything.
+
+```text
+Read https://github.com/korentmaj/korent-harness and set up the core of that
+harness on my machine, adapted to me. Go one step at a time, tell me what you
+are about to do, and wait for my yes before you install anything or change
+anything in my global config.
+
+1. Memory vault. Clone https://github.com/korentmaj/obsidian-tracehold and run
+   its setup script (setup.ps1 on Windows, setup.sh on macOS / Linux). Ask me
+   where the vault should live and whether I already have an Obsidian vault
+   to use instead. It needs Node.js LTS.
+
+2. Memory protocol. Make sure my global ~/.claude/CLAUDE.md says, in a few
+   lines: before project work, read <vault>/01_Projects/<Project>/CLAUDE.md
+   and the last 1 to 3 traces of that project in 05_Agents/Traces. After the
+   work, write durable decisions back into that project CLAUDE.md. Do not
+   ask me what you can look up in the vault first.
+
+3. Traces. Check that the SessionEnd hook from step 1 is in my Claude Code
+   settings and writes a trace. Run one short test session and show me the
+   trace file it wrote.
+
+4. Seeing sessions. Offer to install
+   https://github.com/korentmaj/simple-agent-session-manager so I can see
+   which sessions are working and which wait for me.
+
+5. Plugins. Offer superpowers (https://github.com/obra/superpowers) and
+   Context7. Install only what I say yes to.
+
+Skip the parts that only make sense on Maj's PC: autonight, majbrief, cswap
+account rotation and the HQ dashboard. At the end, list every file you
+created or changed and how to undo each one.
+```
+
 ## How it fits together
 
 ```mermaid
@@ -114,9 +151,57 @@ flowchart TB
 
 ### Skills and plugins
 
-About 85 skills across the accounts. The ones I wrote and that matter most: `korent-harness` (lets an agent understand this whole setup), `majvault` (search and write the vault), `delegate` (fork a big task to another account), `maj-tone` (write in my voice), `transkripcija` (audio to speaker labelled text). All 🔒 for now.
+Plugins I run every day: [superpowers](https://github.com/obra/superpowers) (brainstorm, plan, TDD, verify), ponytail (keeps agents lazy in the good way), Context7 (current library docs instead of memory), TypeScript LSP, TypeSafe (typed AI judgments), Figma.
 
-Third party plugins I run every day: [superpowers](https://github.com/obra/superpowers) (brainstorm, plan, TDD, verify), ponytail (keeps agents lazy in the good way), Context7 (current library docs instead of memory), TypeScript LSP, TypeSafe (typed AI judgments).
+## My skill list
+
+About 85 skills, synced across all three accounts. Most are collected from other people and I use them as they are. Credit goes to their authors.
+
+**Written by me** (🔒 for now, tied to my vault and paths)
+
+| Skill | What it does |
+|---|---|
+| `korent-harness` | Lets an agent understand and inspect this whole setup: accounts, autonight, sessions, brief, vault, dashboard API. |
+| `majvault` | Search, read and write my Obsidian vault. Used before an agent says "I don't know". |
+| `delegate` | Forks a big task to another account (same transcript, same model) so the other accounts burn first. |
+| `by7-orchestrator` | Starts headless Opus head orchestrators on the other accounts that spawn their own subagents. |
+| `maj-tone` | Writes mail and posts in my voice, built from ~1700 of my own messages. This README went through it too. |
+| `transkripcija` | Audio or video to a speaker labelled Markdown transcript, Slovenian and English. |
+
+<details>
+<summary><b>Engineering workflow</b> (most from <a href="https://github.com/mattpocock/skills">mattpocock/skills</a>)</summary>
+
+`grill-me` · `grill-with-docs` · `grilling` · `handoff` · `teach` · `research` · `wizard` · `wait-what` · `to-questionnaire` · `prototype` · `codebase-design` · `domain-modeling` · `improve-codebase-architecture` · `resolving-merge-conflicts` · `writing-for-agents` · `full-output-enforcement`
+
+</details>
+
+<details>
+<summary><b>Frontend design and taste</b></summary>
+
+`impeccable` · `design-taste-frontend` · `design-taste-frontend-v1` · `gpt-taste` · `high-end-visual-design` · `minimalist-ui` · `industrial-brutalist-ui` · `redesign-existing-projects` · `stitch-design-taste` · `image-to-code` · `imagegen-frontend-web` · `imagegen-frontend-mobile` · `brandkit` · `apple-design` · `emil-design-eng` · `pick-ui-library` · `ask-sonner` · `web-perf`
+
+</details>
+
+<details>
+<summary><b>Animation</b></summary>
+
+`animate` · `animate-expo` · `animation-vocabulary` · `find-animation-opportunities` · `improve-animations` · `review-animations`
+
+</details>
+
+<details>
+<summary><b>Cloudflare</b></summary>
+
+`cloudflare` · `wrangler` · `workers-best-practices` · `durable-objects` · `agents-sdk` · `nextjs-on-cloudflare` · `cloudflare-email-service` · `cloudflare-one` · `cloudflare-one-migrations` · `turnstile-spin` · `sandbox-sdk` · `sandbox-stable` · `sandbox-next` · `sandbox-migrate-to-next`
+
+</details>
+
+<details>
+<summary><b>iOS and App Store Connect</b> (for the <code>asc</code> CLI)</summary>
+
+`write-swift` · `asc-cli-usage` · `asc-workflow` · `asc-app-create-ui` · `asc-id-resolver` · `asc-signing-setup` · `asc-xcode-build` · `asc-build-lifecycle` · `asc-notarization` · `asc-testflight-orchestration` · `asc-crash-triage` · `asc-release-flow` · `asc-submission-health` · `asc-metadata-sync` · `asc-localize-metadata` · `asc-whats-new-writer` · `asc-aso-audit` · `asc-screenshot-resize` · `asc-shots-pipeline` · `asc-ppp-pricing` · `asc-subscription-localization` · `asc-revenuecat-catalog-sync` · `asc-wall-submit`
+
+</details>
 
 ## What I would take first
 
